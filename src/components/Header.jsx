@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../services/supabaseClient'
 import SearchBar from './SearchBar'
@@ -42,6 +43,13 @@ function Header({ user }) {
       </div>
     </header>
   )
+}
+
+Header.propTypes = {
+  user: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
 }
 
 export default Header
